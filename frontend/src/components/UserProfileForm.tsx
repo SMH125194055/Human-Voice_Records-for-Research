@@ -55,7 +55,7 @@ const UserProfileForm: React.FC<UserProfileFormProps> = ({ onComplete, isRequire
       
       fetchProfile();
     }
-  }, [user?.id]); // Only depend on user ID
+  }, [user?.id, supabase.auth, user]); // Include all dependencies
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();

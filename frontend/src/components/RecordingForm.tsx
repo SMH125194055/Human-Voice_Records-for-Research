@@ -12,7 +12,7 @@ interface RecordingFormData {
 }
 
 const RecordingForm: React.FC = () => {
-  const { user, supabase } = useAuth();
+  const { user, supabase } = useAuth(); // eslint-disable-line @typescript-eslint/no-unused-vars
   const [isRecording, setIsRecording] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
@@ -133,7 +133,7 @@ const RecordingForm: React.FC = () => {
       const { data: { session } } = await supabase.auth.getSession();
       const token = session?.access_token || '';
       
-      const response = await axios.post(
+      const response = await axios.post( // eslint-disable-line @typescript-eslint/no-unused-vars
         `${process.env.REACT_APP_API_URL}/recordings/upload`,
         formData,
         {

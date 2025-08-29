@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useAuth } from '../contexts/AuthContext';
 import { User, RefreshCw } from 'lucide-react';
-import toast from 'react-hot-toast';
+// import toast from 'react-hot-toast'; // eslint-disable-line @typescript-eslint/no-unused-vars
 
 interface UserProfileData {
   id: string;
@@ -49,7 +49,7 @@ const UserProfile: React.FC = () => {
     };
 
     fetchUserProfile();
-  }, [user?.id]); // Only depend on user ID
+  }, [user?.id, supabase.auth, user]); // Include all dependencies
 
   const handleSyncProfile = async () => {
     setSyncing(true);

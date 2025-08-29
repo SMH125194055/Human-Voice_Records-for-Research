@@ -54,7 +54,7 @@ const MyRecordings: React.FC = () => {
     };
 
     fetchRecordings();
-  }, [user?.id]); // Only depend on user ID
+  }, [user?.id, loading, supabase.auth]); // Include all dependencies
 
   // Manual time update interval for better reliability
   useEffect(() => {

@@ -2,6 +2,10 @@
   "version": 2,
   "builds": [
     {
+      "src": "backend/main.py",
+      "use": "@vercel/python"
+    },
+    {
       "src": "frontend/package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -11,6 +15,10 @@
   ],
   "routes": [
     {
+      "src": "/api/(.*)",
+      "dest": "/backend/main.py"
+    },
+    {
       "src": "/static/(.*)",
       "dest": "/frontend/static/$1"
     },
@@ -18,12 +26,7 @@
       "src": "/(.*)",
       "dest": "/frontend/index.html"
     }
-  ],
-  "env": {
-    "REACT_APP_SUPABASE_URL": "@react_app_supabase_url",
-    "REACT_APP_SUPABASE_ANON_KEY": "@react_app_supabase_anon_key",
-    "REACT_APP_API_URL": "@react_app_api_url"
-  }
+  ]
 }
 
 

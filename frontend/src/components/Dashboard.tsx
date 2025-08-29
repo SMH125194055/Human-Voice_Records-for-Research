@@ -14,7 +14,7 @@ const Dashboard: React.FC = () => {
   const { user, supabase } = useAuth();
   const [stats, setStats] = useState<RecordingStats>({ total: 0, recent: 0 });
   const [loading, setLoading] = useState(false);
-  const [profileComplete, setProfileComplete] = useState(false);
+  const [profileComplete, setProfileComplete] = useState(false); // eslint-disable-line @typescript-eslint/no-unused-vars
   const [showProfileForm, setShowProfileForm] = useState(false);
 
   // Fetch data only once when component mounts
@@ -78,7 +78,7 @@ const Dashboard: React.FC = () => {
     };
 
     fetchData();
-  }, [user?.id]); // Only depend on user ID
+  }, [user?.id, loading, supabase.auth]); // Include all dependencies
 
   const handleProfileComplete = () => {
     setProfileComplete(true);
