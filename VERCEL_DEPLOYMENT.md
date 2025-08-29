@@ -134,3 +134,5 @@ SUPABASE_KEY=your_service_role_key
 - [Vercel Documentation](https://vercel.com/docs)
 - [Supabase Documentation](https://supabase.com/docs)
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
+
+

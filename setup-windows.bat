@@ -39,3 +39,5 @@ echo 4. Run the application:
 echo    - Backend: cd backend ^& venv\Scripts\activate ^& uvicorn main:app --reload
 echo    - Frontend: cd frontend ^& "C:\Program Files\nodejs\npm.cmd" start
 pause
+
+

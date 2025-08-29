@@ -252,3 +252,5 @@ REACT_APP_DEBUG=true npm start
 - [FastAPI Documentation](https://fastapi.tiangolo.com/)
 - [Supabase Documentation](https://supabase.com/docs)
 - [Tailwind CSS Documentation](https://tailwindcss.com/docs)
+
+

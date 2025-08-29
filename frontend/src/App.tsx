@@ -21,7 +21,7 @@ const App: React.FC = () => {
         <div className="min-h-screen bg-gray-50">
           <Toaster position="top-right" />
           <Navbar />
-          <main className="container mx-auto px-4 py-8">
+          <main className="container mx-auto py-4 sm:py-8">
             <Routes>
               <Route path="/login" element={<Login />} />
               <Route path="/register" element={<Register />} />
@@ -58,3 +58,5 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+

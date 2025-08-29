@@ -72,3 +72,5 @@ echo "3. Start the backend server: cd backend && source venv/bin/activate && uvi
 echo "4. Start the frontend: cd frontend && npm start"
 echo ""
 echo "📚 For detailed setup instructions, see the README.md file"
+
+

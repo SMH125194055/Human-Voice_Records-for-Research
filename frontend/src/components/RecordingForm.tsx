@@ -12,7 +12,7 @@ interface RecordingFormData {
 }
 
 const RecordingForm: React.FC = () => {
-  const { user } = useAuth();
+  const { user, supabase } = useAuth();
   const [isRecording, setIsRecording] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
   const [audioBlob, setAudioBlob] = useState<Blob | null>(null);
@@ -130,7 +130,8 @@ const RecordingForm: React.FC = () => {
       formData.append('script_text', data.script_text);
       formData.append('audio_file', audioBlob, 'recording.wav');
 
-      const token = (await user?.getIdToken()) || '';
+      const { data: { session } } = await supabase.auth.getSession();
+      const token = session?.access_token || '';
       
       const response = await axios.post(
         `${process.env.REACT_APP_API_URL}/recordings/upload`,
